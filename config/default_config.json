@@ -1,0 +1,5 @@
+{
+  "audio_input_directory": "/path/to/audio/input/directory",
+  "note_output_directory": "/path/to/audio/output/directory",
+  "delete_audio": true
+}

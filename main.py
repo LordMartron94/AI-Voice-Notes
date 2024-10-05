@@ -1,7 +1,10 @@
 from pathlib import Path
 from typing import List
 
-from py_common.logging import HoornLogger, HoornLogOutputInterface, DefaultHoornLogOutput, FileHoornLogOutput
+from py_common.logging import HoornLogger, HoornLogOutputInterface, DefaultHoornLogOutput, FileHoornLogOutput, LogType
+
+from src.models.config_model import ConfigModel
+
 
 def get_user_local_app_data_dir() -> Path:
 	return Path.home() / "AppData" / "Local"
@@ -19,5 +22,8 @@ if __name__ == "__main__":
 	]
 
 	logger: HoornLogger = HoornLogger(
-		outputs
+		outputs,
+		min_level=LogType.INFO,
 	)
+
+	config_model: ConfigModel = ConfigModel.from_json(Path("config\\main_config.json"))

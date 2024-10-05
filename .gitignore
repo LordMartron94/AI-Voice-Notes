@@ -129,3 +129,6 @@ dmypy.json
 # Personal
 .vale.ini
 .vale-styles
+.input
+.output
+config/main_config.json
