@@ -132,3 +132,4 @@ dmypy.json
 .input
 .output
 config/main_config.json
+install_requirements.ps1

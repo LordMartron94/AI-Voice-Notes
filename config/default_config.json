@@ -1,5 +1,13 @@
 {
   "audio_input_directory": "/path/to/audio/input/directory",
   "note_output_directory": "/path/to/audio/output/directory",
-  "delete_audio": true
+  "delete_audio": true,
+  "hugging_face_authorization_token": "your_huggingface_authorization_token",
+  "used_whisper_model": "medium",
+  "language": "en",
+  "openrouter_api_key": "your_openrouter_api_key",
+  "summarization_model": "meta-llama/llama-3.2-3b-instruct",
+  "title_generation_model": "meta-llama/llama-3.2-3b-instruct",
+  "formatting_cue_words": ["however", "therefore", "in addition", "on the other hand"],
+  "formatting_pause_threshold": 2.0
 }

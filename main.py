@@ -4,6 +4,7 @@ from typing import List
 from py_common.logging import HoornLogger, HoornLogOutputInterface, DefaultHoornLogOutput, FileHoornLogOutput, LogType
 
 from src.models.config_model import ConfigModel
+from src.processing_pipeline.processing_pipeline import ProcessingPipeline
 
 
 def get_user_local_app_data_dir() -> Path:
@@ -23,7 +24,13 @@ if __name__ == "__main__":
 
 	logger: HoornLogger = HoornLogger(
 		outputs,
-		min_level=LogType.INFO,
+		min_level=LogType.DEBUG,
 	)
 
 	config_model: ConfigModel = ConfigModel.from_json(Path("config\\main_config.json"))
+
+	logger.info("Processing started")
+	pipeline: ProcessingPipeline = ProcessingPipeline(config_model, logger)
+	pipeline.build_pipeline()
+	pipeline.flow(None)
+	logger.info("Processing completed")

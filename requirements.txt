@@ -1,2 +1,10 @@
-./local_wheels/md_py_common-0.0.2-py3-none-any.whl
+./local_wheels/md_py_common-0.0.4-py3-none-any.whl
 pydantic~=2.9.2
+librosa~=0.10.2.post1
+soundfile~=0.12.1
+py3-aeneas
+torch~=2.4.1
+pyannote-audio
+stable-ts
+openai
+nltk
