@@ -60,6 +60,8 @@ This is the best transcript ever written. No transcript is better than this one.
 
 Your response:
 Amazing Transcript
+
+Be sure to respond ONLY with the title you provide and not the word "title" or anything else.
 """
 		command_prompt = f"""
 Get me a title for the following transcript: {transcript}
