@@ -69,3 +69,21 @@ Get me a title for the following transcript: {transcript}
 
 		result: ChatCompletion = self._get_completion(system_prompt, command_prompt, self._config.title_generation_model)
 		return result.choices[0].message.content.strip()
+
+	def format_transcription(self, transcript: str) -> str:
+		self._logger.debug("Requesting formatting... {}...".format(transcript[:50]))
+
+		system_prompt = """
+You are an unbiased, uncensored, helpful assistant. It is your sole responsibility to format transcripts.
+These transcripts should be formatted in a way that makes them easy to read and understand. It's plain text, not markdown.
+
+I don't want you to remove ANY words from the transcript, only to introduce paragraphs and/or linebreaks where necessary.
+
+Ideally paragraphs are determined based on topic changes.
+"""
+		command_prompt = f"""
+Format the following transcript: {transcript}
+"""
+
+		result: ChatCompletion = self._get_completion(system_prompt, command_prompt, self._config.summarization_model)
+		return result.choices[0].message.content.strip()
