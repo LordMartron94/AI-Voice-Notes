@@ -12,7 +12,7 @@ class LoadFiles(IPipe):
 		self._config_model = config_model
 		self._logger = logger
 		self._filehandler: FileHandler = FileHandler()
-		self._supported = [".mp3", ".wav", ".ogg", ".opus"]
+		self._supported = [".mp3", ".wav", ".ogg", ".opus", ".m4a"]
 
 	def _get_audio_files(self) -> list:
 		all_audio_files = []
